@@ -1,9 +1,0 @@
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/BaseTest.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/assertions/ScheduleAsserts.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/components/TimeFilter.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/pages/BasePage.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/pages/BusSchedulesPage.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/pages/FavouritesPage.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/pages/HomePage.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/pages/RoutePage.java
-/home/kornpop/IdeaProjects/TL_home_assignment/src/test/java/qa/translink/pom/tests/HomeworkFlowTest.java
