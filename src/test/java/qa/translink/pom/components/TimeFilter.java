@@ -28,7 +28,7 @@ public class TimeFilter extends BasePage {
     public TimeFilter setEnd(LocalTime t) { setTimeUniversal(t, false); return this; }
 
     public void submit() {
-        clickByAnyText(new String[]{"Search", "Search schedules", "Update results", "Update"});
+        clickByAnyText(new String[]{"Search"});
         waitMainContentRefresh();
     }
 
@@ -37,10 +37,7 @@ public class TimeFilter extends BasePage {
         return retry(12, () -> {
             java.util.List<By> locs = java.util.Arrays.asList(
                     By.cssSelector("input[type='date']"),
-                    By.cssSelector("input[aria-label='Date' i]"),
-                    By.xpath("//input[contains(translate(@id,'DATE','date'),'date')]"),
-                    By.xpath("//input[contains(translate(@name,'DATE','date'),'date')]"),
-                    By.xpath("//label[normalize-space()='Date']/following::*[self::input or self::textarea][1]")
+                    By.xpath("//input[contains(translate(@id,'DATE','date'),'date')]")
             );
             for (By by : locs) {
                 Optional<WebElement> el = d.findElements(by).stream().filter(WebElement::isDisplayed).findFirst();

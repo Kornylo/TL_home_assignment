@@ -13,7 +13,7 @@ public class HomeworkFlowTest extends BaseTest {
     @Test
     public void homework_and_bonus_pom() {
         // 1) Home → Bus Schedules
-        HomePage home = new HomePage(d, wait).open().acceptConsentIfAny();
+        HomePage home = new HomePage(d, wait).open();
         BusSchedulesPage schedules = home.openBusSchedules();
         // 2) Search 99
         schedules.searchRoute("99");

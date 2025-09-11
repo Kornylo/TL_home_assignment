@@ -28,19 +28,13 @@ public class BusSchedulesPage extends BasePage {
             Optional<WebElement> hit = d.findElements(By.id("find-schedule-searchbox"))
                     .stream().filter(WebElement::isDisplayed).findFirst();
             if (hit.isPresent()) return hit.get();
-            Optional<WebElement> byPh = d.findElements(By.cssSelector("input[placeholder*='Search' i]"))
-                    .stream().filter(WebElement::isDisplayed).findFirst();
-            if (byPh.isPresent()) return byPh.get();
-            Optional<WebElement> byLbl = d.findElements(By.xpath("//label[contains(.,'Search')]/following::input[1]"))
-                    .stream().filter(WebElement::isDisplayed).findFirst();
-            if (byLbl.isPresent()) return byLbl.get();
             throw new NoSuchElementException("searchbox not found");
         });
     }
 
     private boolean clickFindScheduleIfPresent() {
         try {
-            By withinForm = By.xpath("//form[.//input[@id='find-schedule-searchbox' or contains(@placeholder,'Search')]]//button");
+            By withinForm = By.xpath("//button[@class='flexContainer']");
             WebElement btn = retry(3, () -> d.findElements(withinForm).stream()
                     .filter(e -> e.isDisplayed() && e.getText().toLowerCase().contains("find"))
                     .findFirst().orElseThrow(() -> new NoSuchElementException("no btn")));

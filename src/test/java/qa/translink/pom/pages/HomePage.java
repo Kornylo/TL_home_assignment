@@ -15,23 +15,6 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage acceptConsentIfAny() {
-        d.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(0));
-        try {
-            WebDriverWait w = new WebDriverWait(d, java.time.Duration.ofSeconds(4));
-            WebElement btn = w.until(ExpectedConditions.presenceOfElementLocated(
-                    By.cssSelector("#onetrust-accept-btn-handler, " +
-                            "button[aria-label*='Accept' i], " +
-                            "button[aria-label*='agree' i], " +
-                            "button:has(svg[aria-label*='close' i])")));
-            if (btn.isDisplayed()) tryClick(btn);
-        } catch (Exception ignore) {
-            // silent best effort
-        } finally {
-            d.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(5));
-        }
-        return this;
-    }
 
     public BusSchedulesPage openBusSchedules() {
         try {
